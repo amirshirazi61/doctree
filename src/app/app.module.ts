@@ -1,16 +1,23 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { AppComponent } from './app.component';
+import { DocTreeComponent } from './app.component';
+import { FileDropDirective } from './directives/FileDrop';
+import { FileClickDirective } from './directives/fileClick';
+
+import { EmitterService } from './services/emitter.service';
+import { DataService } from './services/data.service';
 
 @NgModule({
   declarations: [
-    AppComponent
+    DocTreeComponent,
+    FileDropDirective,
+    FileClickDirective
   ],
   imports: [
     BrowserModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [EmitterService, DataService],
+  bootstrap: [DocTreeComponent]
 })
-export class AppModule { }
+export class DocTreeModule { }

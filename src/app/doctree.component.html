@@ -1,0 +1,30 @@
+<div class="midpage-loader" style="background-color:#fff !important" *ngIf="loadingLogo">
+    <div>
+        <i class="fa fa-circle-o-notch fa-spin fa-3" aria-hidden="true"></i> <br />
+        Loading...
+    </div>
+</div>
+
+<ul class="filetree treeview" id="browser">
+    <li class="collapsable lastCollapsable">
+        <div class="hitarea expandable-hitarea lastExpandable-hitarea"></div>
+        <span class="folder">Documents</span>
+        <ul>
+            <ng-container *ngFor="let package of packages; let i = index">
+                <li fileDrop
+                    [package]="package"
+                    class="collapsable"
+                    (click)="setFolderStyleAtIndex(i, $event)"
+                    style="display: table;">
+                    <div></div>
+                    <span class="folder">{{package.DisplayName}}</span>
+                    <ul>
+                        <li style="display: table" title="double click to view the file" fileClick [tempFiles]="tempFiles" [file]="file" [package]="package" [ngClass]="setFileClass(j, package.Files.length)" *ngFor="let file of package.Files; let j = index">
+                            <span class="file">{{file}}</span>
+                        </li>
+                    </ul>
+                </li>
+            </ng-container>
+        </ul>
+    </li>
+</ul>
