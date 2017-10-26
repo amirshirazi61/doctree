@@ -12,7 +12,7 @@ export class FileClickDirective {
 
     @Input() file: any;
     @Input() package: any;
-    @Input() tempFiles: any[];
+    @Input() tempFiles: any[]; 
 
     @HostListener('contextmenu', ['$event']) oncontextmenu(event: MouseEvent) {
         event.preventDefault();
