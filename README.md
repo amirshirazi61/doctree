@@ -1,6 +1,7 @@
 # Doctree
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.4.9.
+This is an effort to implement jQuery TreeView plugin(https://github.com/jzaefferer/jquery-treeview) as an Angular module.
 
 ## Development server
 
